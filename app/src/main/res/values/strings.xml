@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Bashkara</string>
+
+    <string name="txtExpresion">Expresión de la forma ax&#xb2;  + bx + c</string>  <!-- String: ax2+bx+c -->
+    <string name="txtA">a</string>
+    <string name="txtB">b</string>
+    <string name="txtC">c</string>
+    <string name="btnCalcular">RAICES</string>
+    <string name="btnLimpiar">LIMPIAR</string>
+    <string name="txtRaiz1">Raiz x1: ----</string>
+    <string name="txtRaiz2">Raiz x2: ----</string>
+</resources>
