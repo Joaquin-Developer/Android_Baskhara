@@ -15,30 +15,30 @@ class MainActivity : AppCompatActivity() {
 
         btnCalcular.setOnClickListener{
             if(txtA.text.isEmpty() || txtB.text.isEmpty() || txtC.text.isEmpty()){
-                mostrarAlertDialog("Error", "Debe indicar todos los valores solicitados")
-                limpiarTextos()
+                showAlertDialog("Error", "Debe indicar todos los valores solicitados")
+                cleanText()
             } else {
-                calculoRaices()
+                calculateSquare()
             }
         }
 
         btnLimpiar.setOnClickListener{
-            limpiarTextos()
+            cleanText()
         }
 
     }
 
-    fun calculoRaices(){
+    fun calculateSquare(){
         try{
             val a: Double = txtA.text.toString().toDouble()
             val b: Double = txtB.text.toString().toDouble()
             val c: Double = txtC.text.toString().toDouble()
-            val paramRaiz: Double = ((b*b)-4*a*c) //debe ser positivo estrictamente
-            if(paramRaiz < 0){
+            val paramSquare: Double = ((b*b)-4*a*c) //debe ser positivo estrictamente
+            if(Square < 0){
                 // no hay raies ... mostramos un mensaje informandolo
                 txtRaiz1.setText("∄ raíz ∈ ℝ")
                 txtRaiz2.setText("∄ raíz ∈ ℝ")
-                mostrarAlertDialog("Aviso", "La funcion cuadratica indicada no tiene " +
+                showAlertDialog("Aviso", "La funcion cuadratica indicada no tiene " +
                         "raices pertenecientes a los reales ( ∄ x ∈ ℝ / f(x)=0 ).")
 
             }else{
@@ -66,11 +66,11 @@ class MainActivity : AppCompatActivity() {
 
             }
         }catch (e: Exception){
-            mostrarAlertDialog("Error.", "Se produjo un error.")
+            showAlertDialog("Error.", "Se produjo un error.")
         }
     }
 
-    fun limpiarTextos(){
+    fun cleanText(){
         // limpiar todos los TextBoxs
         txtA.setText("")
         txtB.setText("")
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         txtRaiz2.setText("Raiz x2: ----")
     }
 
-    fun mostrarAlertDialog(titulo: String, contenido: String) {
+    fun showAlertDialog(titulo: String, contenido: String) {
         AlertDialog.Builder(this)
             .setTitle(titulo)
             .setMessage(contenido)
